@@ -74,8 +74,6 @@ final class ModuleGen: ParsableCommand {
     }
     
     private func generateFilesAndFolders() throws {
-//        shell("pwd")
-//        shell("ruby", "./Users/isaaliev/Desktop/add.rb")
         print("Parsing input ...")
         try parseInput()
 
@@ -256,16 +254,6 @@ final class ModuleGen: ParsableCommand {
         
         return result as String
     }
-}
-
-@discardableResult
-func shell(_ args: String...) -> Int32 {
-    let task = Process()
-    task.launchPath = "/usr/bin/env"
-    task.arguments = args
-    task.launch()
-    task.waitUntilExit()
-    return task.terminationStatus
 }
 
 ModuleGen.main()
